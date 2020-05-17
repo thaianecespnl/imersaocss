@@ -1,13 +1,54 @@
+/*soft reset do css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-image:
-      url(https://conceitosopticos.com.br/wp-content/uploads/2016/12/template-fundo-site-conseitos-opticos-4.jpg);
-    background-size: auto;
-    font-family: Arial;
+  background-color: #6c648b;
+    /*background-image:
+      url(https://cdn.pixabay.com/photo/2017/03/02/00/03/texture-2110023_960_720.jpg);*/
+    background-size: cover ;
+    background-attachment: fixed;
+    font-family: 'Courgette', cursive;
     height: 100vh;
+    
+    font-size: 12px;
+}
+
+  /*Se  a tela tiver pelo menos 400px vai carregar esses estilos*/
+  @media (min-width: 400px) {
+    body {
+      font-size: 14px;
+    }
   }
   
+  /*breakpoint*/
+  @media (min-width: 600px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  color: rgb(5, 5, 5);
+  font-style: italic;
+}
+
   .menu {
-    background-color: white;
+    background-color: hsla(166, 37%, 57%, 0.796);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
   }
   
   .menu ul {
@@ -16,24 +57,194 @@ body {
   }
   
   .menu li {
-    list-style: none;
+    list-style: none;    
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 2s, color 2s;
+  }
+
+  .menu a:active,
+  .menu a:hover {
+    background-color: #000000b7;
+    color: #69baa7cb;  
+    text-shadow: #fba100;
   }
   
   a {
-    color: teal;
+    color: black;
     text-decoration: none;
   }
   
   a:hover {
     text-decoration: underline;
   }
+
+  /*.titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    animation: linear 2s animacaoTitulo forwards;   
+  }*/
+
+  @keyframes animacaoTitulo {
+    0% {
+
+    }
+   100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
   
   .site-subtitle,
   .site-title {
-    color: black ;
-    text-align: center;  
+    color: black;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 0.1em 0.1em 0.05em #86a19e;     
   }
   
-  .site-subtitle {
+  .site-title {
     font-style: italic;
+    margin-top: -150px;
   }
+
+  .sobre,
+  .contato,
+  .certificado {
+    margin-top: -200;
+    padding: 2em;
+    min-height: 100vh;
+  }
+
+  @media (min-width: 1200px) {
+    .sobre,
+    .contato,
+    .certificado {
+      max-width: 1200px;    
+    }
+  }
+
+  .sobre h2,
+  .contato h2,
+  .certificado h2 {
+    font-family: 'Courgette', cursive;
+    margin-bottom: 2em;
+    font-size: 2em;
+    text-align: center;       
+  }
+
+  .sobre p {
+    color: white;
+    margin-bottom: 1.4;
+    text-indent: 1.4em;
+    text-align: justify;
+  }
+
+  .sobre a {
+    color: black;
+    text-decoration: black;
+  }
+
+  .sobre a:hover {
+    background-color: #69baa7cb;
+  }
+
+  .sobre .avatar {
+    margin-left: 1em;
+  }
+
+  .sobre .avatar img {
+    border-radius: 10%;
+    
+    /*clip-path: polygon(); dentro das aspas colocar valores do site benettfeely/clippy*/
+  }
+
+  @media (min-width: 688px) {
+    .sobre .avatar {
+      float: right;
+    }    
+  }
+
+  .contato {
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+
+  .certificado .grid {
+    display: grid;
+    gap: 2em;    
+  }
+
+  @media (min-width: 560px) {
+   .certificado .grid {
+     grid-template-columns: 240px 240px;
+   }
+  }
+
+  @media (min-width: 880px) {
+    .certificado .grid {
+      grid-template-columns: repeat(3, 260px);
+      align-content: center; 
+      justify-content: center;
+      height: calc(100vh - 48px - 8em);
+    }
+   }
+
+  .certificado figure {
+    text-align: center;
+  }
+  
+  .img-certificado {
+/* ja mudei o tamanho das imagens pelo photshop*/
+    border-radius:5%;
+    object-fit: cover;  
+    object-position: left bottom;   
+    transition: transform 500ms;
+  }
+
+  .img-certificado:hover {
+    transform: scale(1.2) /*rotate(2deg)*/;
+  }
+
+  /*.card {
+    position: relative;
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+  }
+
+  .card-back {
+    background-color: whitesmoke;
+    height:;
+  }*/
+
+  @media (min-width: 560px) {
+    .certificado .grid {
+      height: auto;
+      width: auto ;
+    }
+   }
+   
+   .contato .icons {
+     text-align: center;
+     size: 25px;
+   }
+   
+   .contato a {
+     color: black;
+     font-size: 3em;
+     transition: text-shadow 1s;
+    }
+
+    .contato a:active,
+    .contato a:hover{
+      text-decoration: none;
+      text-shadow: 0px 0px 10px rgb(251, 159, 0);
+    }
+
+
